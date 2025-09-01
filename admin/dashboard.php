@@ -2,14 +2,14 @@
 session_start();
 
 if(isset($_SESSION['user_id'])){
-    if($_SESSION['role'] == "user"){
-        echo "You are user";
+    if($_SESSION['role'] == "admin"){
+        echo "You are ADMİN";
 
     }else{
-        header("Location: admin/dashboard.php");
+        header("Location: ../dashboard.php");
     }
 }else{
-    header("Location: login.php");
+    header("Location: ../login.php");
 }
 
 ?>
@@ -22,6 +22,6 @@ if(isset($_SESSION['user_id'])){
     <title>Document</title>
 </head>
 <body>
-    <a href="logout.php?user_id=<?=$user_id;?>"> Log out</a>
+    <a href="../logout.php"> Log out</a>
 </body>
 </html>

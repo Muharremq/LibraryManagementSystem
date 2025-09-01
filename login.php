@@ -22,7 +22,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $_SESSION['name'] = $row['name'];
             $_SESSION['email'] = $row['email'];
 
-            header("Location: dashboard.php");
+            if($row['role'] == "admin"){
+                header("Location: admin/dashboard.php");
+
+            }else{
+                header("Location: dashboard.php");
+            }
+
             exit();
         } else {
             $error_message = "Yanlış şifre!";
