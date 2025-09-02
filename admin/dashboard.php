@@ -65,8 +65,31 @@ if(isset($_SESSION['user_id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <style type="text/css">
+        .adminnavbar{
+            display: flex;
+            width: 200px;
+            flex-direction: column;
+            background-color: green;
+            color:white;
+        }
+        .adminnavbar a{
+            color: white;
+            text-decoration: none;
+
+        }
+        .adminnavbar ul li{
+            list-style: none;
+        }
+
+    </style>
 </head>
 <body>
+    <nav class="adminnavbar">
+        <ul>
+            <li> <a href="view_transaction.php">view transaction</a></li>
+        </ul>
+    </nav>
     <a href="../logout.php"> Log out</a>
 </body>
 </html>

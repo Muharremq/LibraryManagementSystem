@@ -773,3 +773,13 @@ body {
   font-size: 12px;
   letter-spacing: 0.5px;
 }
+.update {
+  text-decoration: none;
+  background-color: green;
+  color: white;
+}
+.delete {
+  text-decoration: none;
+  background-color: red;
+  color: white;
+}

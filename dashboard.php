@@ -35,6 +35,7 @@ if(isset($_SESSION['user_id'])){
     <title>Document</title>
 </head>
 <body>
+    <a href="requestcheck.php">request update</a>
 <a href="logout.php" class="logout-btn" onclick="return confirm('Çıkış yapmak istediğinizden emin misiniz?')">
                     Çıkış Yap
                 </a>
