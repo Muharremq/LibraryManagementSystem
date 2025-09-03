@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../db.php";
+include "../../db.php";
 if(isset($_SESSION['user_id'])){
     if($_SESSION['role'] == "admin"){
         if(isset($_GET['transaction_id'])){
@@ -19,9 +19,9 @@ if(isset($_SESSION['user_id'])){
             header("Location: view_transaction.php");
         }     
 }else {
-    header("Location: ../dashboard.php");
+    header("Location: ../../dashboard.php");
     }
 }else{
-    header("Location: ../login.php");
+    header("Location: ../../login.php");
 }
 ?>

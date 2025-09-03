@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../db.php";
+include "../../db.php";
 if(isset($_SESSION['user_id'])){
     if($_SESSION['role'] == "admin"){
         // Düzeltilmiş SQL sorgusu - JOIN kullanarak iki tabloyu birleştirme
@@ -28,6 +28,7 @@ if(isset($_SESSION['user_id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>library</title>
     <link rel="stylesheet" href="admin_style.css">
+    <?php require "../../view/partial/admin_navbar.php";?>
 </head>
 <body>
     <table class="view-books">
