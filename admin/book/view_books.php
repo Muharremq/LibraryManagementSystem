@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_SESSION['user_id'])){
     if($_SESSION['role'] == "admin"){
-        include "../db.php";
+        include "../../db.php";
         $sql = "SELECT * FROM books ORDER BY id DESC";
         $result = mysqli_query($conn, $sql);
 
@@ -34,6 +34,7 @@ $success_message = "";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitap Listesi - Library</title>
     <link rel="stylesheet" href="admin_style.css">
+    <?php require "../../view/partial/admin_navbar.php";?>
 </head>
 <body>
     <div class="page-header">
@@ -75,14 +76,6 @@ $success_message = "";
             <div class="stat-card available">
                 <h3><?php echo $total_quantity; ?></h3>
                 <p>Toplam Stok</p>
-            </div>
-            <div class="stat-card low-stock">
-                <h3><?php echo $low_stock_count; ?></h3>
-                <p>Düşük Stok</p>
-            </div>
-            <div class="stat-card out-of-stock">
-                <h3><?php echo $out_of_stock_count; ?></h3>
-                <p>Stokta Yok</p>
             </div>
         </div>
     <?php endif; ?>
@@ -135,8 +128,7 @@ $success_message = "";
                             </td>
                             <td>
                                 <div class="actions">
-                                    <a href="view_book.php?id=<?php echo $row['id']; ?>" class="btn btn-view">Görüntüle</a>
-                                    <a href="edit_book.php?id=<?php echo $row['id']; ?>" class="btn btn-edit">Düzenle</a>
+                                    <a href="update_books.php?id=<?php echo $row['id']; ?>" class="btn btn-edit">Düzenle</a>
                                     <a href="delete_book.php?id=<?php echo $row['id']; ?>" class="btn btn-delete" 
                                        onclick="return confirm('<?php echo addslashes($row['title']); ?> kitabını silmek istediğinizden emin misiniz?')">Sil</a>
                                 </div>
@@ -154,13 +146,6 @@ $success_message = "";
                 <?php endif; ?>
             </tbody>
         </table>
-    </div>
-
-    <!-- Floating Add Button -->
-    <div class="floating-add">
-        <a href="add_book.php" class="fab" title="Yeni Kitap Ekle">
-            <span>+</span>
-        </a>
     </div>
 </body>
 </html>

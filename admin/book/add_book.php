@@ -1,5 +1,5 @@
 <?php
-include "../db.php";
+include "../../db.php";
 session_start();
 
 $error_message = "";
@@ -49,6 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 
                 if(move_uploaded_file($image_location, $target_file)){
                     $success_message = "Kitap başarıyla eklendi!";
+                    header("Location: view_books.php");
                 } else {
                     $error_message = "Dosya yüklenirken hata oluştu!";
                 }
@@ -66,7 +67,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitap Ekle - Admin Panel</title>
-    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="../admin_style.css">
+    <?php require "../../view/partial/admin_navbar.php";?>
 </head>
 <body>
     <div class="admin_add_book">
