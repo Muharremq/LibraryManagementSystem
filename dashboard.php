@@ -33,11 +33,11 @@ if(isset($_SESSION['user_id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <?php require "view/partial/navbar.php";?>
 </head>
 <body>
-    <a href="requestcheck.php">request update</a>
-<a href="logout.php" class="logout-btn" onclick="return confirm('Çıkış yapmak istediğinizden emin misiniz?')">
-                    Çıkış Yap
-                </a>
-            </body>
+
+
+</body>
 </html>

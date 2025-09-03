@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $_SESSION['email'] = $row['email'];
 
             if($row['role'] == "admin"){
-                header("Location: admin/dashboard.php");
+                header("Location: admin/view_books.php");
 
             }else{
                 header("Location: dashboard.php");

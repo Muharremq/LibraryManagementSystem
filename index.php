@@ -4,7 +4,7 @@ $sql = "SELECT * FROM books ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);
 
 if(!$result){
-    $error_message = "Veritabanı hatası: " . mysqli_error($conn);
+      $error_message = "Veritabanı hatası: " . mysqli_error($conn);
 }
 ?>
 
