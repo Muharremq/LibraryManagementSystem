@@ -301,16 +301,16 @@
             
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item">
-                    <a href="view_books.php" class="nav-link">Vıew Books</a>
+                    <a href="../book/view_books.php" class="nav-link">Vıew Books</a>
                 </li>
                 <li class="nav-item">
-                    <a href="add_book.php" class="nav-link">Add Book</a>
+                    <a href="../book/add_book.php" class="nav-link">Add Book</a>
                 </li>
                 <li class="nav-item">
                     <a href="../transactions/view_transaction.php" class="nav-link">Vıew Transaction</a>
                 </li>
                 <li class="nav-item">
-                    <a href="manage_users.php" class="nav-link">Manage Users</a>
+                    <a href="../user/manage_users.php" class="nav-link">Manage Users</a>
                 </li>
                 <li class="nav-item">
                     <a href="../logout.php" class="logout-btn" onclick="return confirm('Çıkış yapmak istediğinizden emin misiniz?')">

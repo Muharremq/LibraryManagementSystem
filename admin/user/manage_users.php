@@ -6,7 +6,7 @@ $success_message = "";
 
 if(isset($_SESSION['user_id'])){
     if($_SESSION['role'] == "admin"){
-        include "../db.php";
+        include "../../db.php";
         $sql = "SELECT id, name, email, role FROM users WHERE role = 'user'";
         $result = mysqli_query($conn, $sql);
 
@@ -14,11 +14,11 @@ if(isset($_SESSION['user_id'])){
             $error_message = "Veritabanı hatası: " . mysqli_error($conn);
         }
     } else {
-        header("Location: ../dashboard.php");
+        header("Location: ../../dashboard.php");
         exit();
     }
 } else {
-    header("Location: ../login.php");
+    header("Location: ../../login.php");
     exit();
 }
 ?>
@@ -30,6 +30,7 @@ if(isset($_SESSION['user_id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kullanıcı Yönetimi - Library</title>
     <link rel="stylesheet" href="admin_style.css">
+    <?php require "../../view/partial/admin_navbar.php";?>
 </head>
 <body>
     <!-- Hata mesajları -->

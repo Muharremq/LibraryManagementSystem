@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../db.php";
+include "../../db.php";
 
 if(isset($_SESSION['user_id'])){
     if($_SESSION['role'] == "admin"){
@@ -41,12 +41,12 @@ if(isset($_SESSION['user_id'])){
         }
     } else {
         // Admin değil
-        header("Location: ../dashboard.php");
+        header("Location: ../../dashboard.php");
         exit();
     }
 } else {
     // Giriş yapmamış
-    header("Location: ../login.php");
+    header("Location: ../../login.php");
     exit();
 }
 ?>
