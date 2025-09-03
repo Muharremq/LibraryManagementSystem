@@ -88,6 +88,9 @@ if(isset($_SESSION['user_id'])){
     <nav class="adminnavbar">
         <ul>
             <li> <a href="view_transaction.php">view transaction</a></li>
+            <li><a href="manage_users.php"> manage users</a></li>
+            <li> <a href="add_book.php"> Add books</a></li>
+            <li> <a href="view_books.php"> View Books</a></li>
         </ul>
     </nav>
     <a href="../logout.php"> Log out</a>

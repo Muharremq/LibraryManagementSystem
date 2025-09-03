@@ -31,6 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 $success_message = "Kayıt başarılı! Giriş yapabilirsiniz.";
                 // Formu temizle
                 $name = $email = $password = "";
+                header("Location: login.php");
             } else {
                 $error_message = "Kayıt sırasında hata oluştu: " . mysqli_error($conn);
             }
