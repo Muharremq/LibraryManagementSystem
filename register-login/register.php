@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "../db.php";
 
 $error_message = "";
 $success_message = "";

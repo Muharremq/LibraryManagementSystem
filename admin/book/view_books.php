@@ -1,29 +1,30 @@
 <?php
 session_start();
 
-
-if(isset($_SESSION['user_id'])){
-    if($_SESSION['role'] == "admin"){
-        include "../../db.php";
-        $sql = "SELECT * FROM books ORDER BY id DESC";
-        $result = mysqli_query($conn, $sql);
-
-        if(!$result){
-            $error_message = "Veritabanı hatası: " . mysqli_error($conn);
-        }else {
-
-        }
-}else {
-    header("Location: ../dashboard.php");
-}
-
-
-
-
-
+// Değişkenleri başlangıçta tanımla
+$result = null;
 $error_message = "";
 $success_message = "";
 
+// Oturum kontrolü
+if(!isset($_SESSION['user_id'])){
+    header("Location: ../../login.php"); // veya giriş sayfanıza uygun yol
+    exit();
+}
+
+// Admin kontrolü
+if($_SESSION['role'] != "admin"){
+    header("Location: ../dashboard.php");
+    exit();
+}
+
+// Admin ise veritabanı işlemlerini yap
+include "../../db.php";
+$sql = "SELECT * FROM books ORDER BY id DESC";
+$result = mysqli_query($conn, $sql);
+
+if(!$result){
+    $error_message = "Veritabanı hatası: " . mysqli_error($conn);
 }
 ?>
 
@@ -33,10 +34,11 @@ $success_message = "";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitap Listesi - Library</title>
-    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="../admin_style.css">
     <?php require "../../view/partial/admin_navbar.php";?>
 </head>
 <body>
+    <!-- Geri kalan HTML kodunuz aynı kalacak -->
     <div class="page-header">
         <h1>Kitap Listesi</h1>
         <p>Kütüphanedeki tüm kitapları görüntüleyin</p>

@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "../db.php";
 session_start();
 
 $error_message = "";
@@ -23,10 +23,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $_SESSION['email'] = $row['email'];
 
             if($row['role'] == "admin"){
-                header("Location: admin/view_books.php");
+                header("Location: ../admin/book/view_books.php");
 
             }else{
-                header("Location: dashboard.php");
+                header("Location: ../dashboard.php");
             }
 
             exit();
@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 }
 ?>
 
-<?php require 'view/partial/header.php'?>
+<?php require '../view/partial/header.php'?>
 
 <body>
     <div class="register">
